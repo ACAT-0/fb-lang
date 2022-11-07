@@ -14,6 +14,12 @@ function fillTape(lengthe)
     end
 end
 
+local function isInteger(str)
+
+    return not (str == "" or str:find("%D"))  -- str:match("%D") also works
+  
+  end
+
 function pushTape()
     print("")
     for i=1,#tape do 
@@ -25,7 +31,7 @@ function parseCommands(cmd,hdl)
     a=1
     Debug=0
     if hdl==nil then header.X=1 else header.X=hdl end
-    if cmd==nil or not type(cmd)=="STRING" then return print("error at '', no readable cmd specified") end
+    if cmd=='NO!' or not type(cmd)=="STRING" then return print("error at '', no readable cmd specified") end
     LoopIteration=nil
     loopDuration=nil
     LoopStartPoint=nil
@@ -71,13 +77,13 @@ function parseCommands(cmd,hdl)
                 a=a+1
                 read=cmd:sub(a,a)
             until read==")" end
-        elseif read=="]" then
+        elseif read=="+" then
             if con.a>con.b then con.y=1 else
             repeat 
                 a=a+1
                 read=cmd:sub(a,a)
             until read==")" end
-        elseif read=="[" then
+        elseif read=="-" then
             if con.a<con.b then con.y=1 else
             repeat 
                 a=a+1
@@ -87,12 +93,8 @@ function parseCommands(cmd,hdl)
         elseif read=="$" then 
             print("input requested...")
             local answer=io.read()
-            if answer==con.a then con.y=1 
-            else 
-                repeat 
-                    a=a+1
-                    read=cmd:sub(a,a)
-                until read==")"
+            if isInteger(answer)==true then tape[header.X]=tonumber(answer,10)
+            else print("error: specified input is not a valid integer...") header.X=header.X-1
             end
         elseif read=="~" then
             tape[header.X]=math.random(con.a,con.b)
@@ -105,7 +107,7 @@ end
 function INPUT()
 io.write("welcome to Fb. enter command pleez: ")
 local answer=io.read()
-if answer=="" then command=nil io.write("warning: invalid cmd!") else command=answer end
+if answer=="" then command="NO!" io.write("warning: invalid cmd!") else command=answer end
 io.write("before you begin, specify tape length (must be a number): ")
 local answer=io.read()
 length=answer

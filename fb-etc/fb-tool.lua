@@ -69,13 +69,13 @@ function parseCommands(cmd,hdl)
                 a=a+1
                 read=cmd:sub(a,a)
             until read==")" end
-        elseif read=="]" then
+        elseif read=="+" then
             if con.a>con.b then con.y=1 else
             repeat 
                 a=a+1
                 read=cmd:sub(a,a)
             until read==")" end
-        elseif read=="[" then
+        elseif read=="-" then
             if con.a<con.b then con.y=1 else
             repeat 
                 a=a+1
@@ -122,7 +122,7 @@ answer=io.read()
 if answer=="fb start" then 
         cont=1
         while cont>0 do
-        dofile("Fb-test.lua") 
+        dofile("Fb.lua") 
         print("Do you want to run another program? (y/n)")
         answer=io.read()
         if answer=="y" then cont=1 else cont=0 open=1 end
