@@ -1,0 +1,38 @@
+Here's some basic docs.
+    
+    1. BASICS
+        Fb uses symbols to represent a tape. This tape is filled with cells, which you can increment and decrement to your liking.
+
+        Use > to move to the next cell, and < to move back.
+        Use ^ to increase the current cell's value, and use v to decrease the current cell's value.
+        You can use curly brackets 
+        {to specify a for loop. the number of repeats is defined by the value of the current cell. an ending bracket to a loop must be followed by a semicolon};
+            Don't nest For loops, dumbass.
+        Use ! to print the entire contents of the tape. Useful for debugging.
+        Use ; to print the value of the current cell.
+        Use # to print the value of the current cell, converted into letters. (1-26=lowercase alphabet, 27=space, 28=exclamation point)
+
+        Additionally, you can use "D" to enable a debug mode that will print exactly what is currently happening.
+
+
+    2. CONDITIONALS:
+        >^^?
+        - logs that cell to be conditionalizionied
+        >>^^^?
+        - logs that cell to be the secondary conditional cell
+        =)
+        - compares the two cells, if they are the same, then it runs the code within the = and the ). 
+            - if the statement is not true, then it just skips ahead until the parenthesis.
+
+        EXAMPLE:
+        ^^^?>^^^?=!)
+        returns a pushtape!
+        ^^^?>^^^^?=!)
+        does not return a pushtape!
+
+        ^^^?>^^^^>^^^>^^>^^^^^<?=!)
+
+    3. USER INPUT:
+        $ - asks for user input in the form of a number. if the number is equal to the defined conditional, then it will run the code within the parenthsesesised. else, it skips to the end of the aprenthesis.
+
+        ^^^?>$!)
