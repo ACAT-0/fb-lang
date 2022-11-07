@@ -1,5 +1,5 @@
 
-alphabet_string = 'abcdefghijklmnopqrstuvwxyz '
+alphabet_string = 'abcdefghijklmnopqrstuvwxyz !'
 alphabet = []
 
 for i in alphabet_string:
@@ -25,7 +25,7 @@ def convert(text):
                 converted = converted + '^'
             result = result + converted + '#>'
         else:
-            print("error, your input was not a letter or a space")
+            print("error: input contains invalid characters")
 
     return result
 
