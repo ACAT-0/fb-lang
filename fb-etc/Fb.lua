@@ -29,7 +29,11 @@ function parseCommands(cmd,hdl)
     LoopIteration=nil
     loopDuration=nil
     LoopStartPoint=nil
-    while a < string.len(cmd) do 
+    local con={}
+    con.a=nil
+    con.b=nil
+    con.y=0
+    while a < string.len(cmd)+1 do 
         local read=cmd:sub(a,a)
         if read=="D" then 
             if Debug==0 then
@@ -58,6 +62,26 @@ function parseCommands(cmd,hdl)
             a=LoopStartPoint LoopIteration=LoopIteration+1 end
         elseif read=="!" then 
             pushTape()
+        elseif read=="?" then 
+            if con.a==nil then con.a=tape[header.X] else
+            con.b=tape[header.X] end
+        elseif read=="=" then
+            if con.a==con.b then con.y=1 else
+            repeat 
+                a=a+1
+                read=cmd:sub(a,a)
+            until read==")" end
+        elseif read==")" then con.y=0
+        elseif read=="$" then 
+            print("input requested...")
+            local answer=io.read()
+            if answer==con.a then con.y=1 
+            else 
+                repeat 
+                    a=a+1
+                    read=cmd:sub(a,a)
+                until read==")"
+            end
         end
         a=a+1
     end

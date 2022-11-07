@@ -20,7 +20,7 @@ Here's some basic docs.
         If no tape length is specified, it defaults to 100.
 
 
-Conditional Examples Maybe:
+CONDITIONALS:
 >^^?
  - logs that cell to be conditionalizionied
  >>^^^?
@@ -29,13 +29,15 @@ Conditional Examples Maybe:
  - compares the two cells, if they are the same, then it runs the code within the = and the ). 
     - if the statement is not true, then it just skips ahead until the parenthesis.
 
-CONDITIONAL EXAMPLE:
+EXAMPLE:
 ^^^?>^^^?=!)
-returns with a pushtape!
+returns a pushtape!
+^^^?>^^^^?=!)
+does not return a pushtape!
 
 ^^^?>^^^^>^^^>^^>^^^^^<?=!)
 
 USER INPUT:
-asks for user input in the form of a number. if the number is equal to the defined conditional, then it will run the code within the parenthsesesised. else, it skips to the end of the aprenthesis.
+$ - asks for user input in the form of a number. if the number is equal to the defined conditional, then it will run the code within the parenthsesesised. else, it skips to the end of the aprenthesis.
 
 ^^^?>$!)
