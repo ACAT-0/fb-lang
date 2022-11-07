@@ -9,10 +9,4 @@ TRIPLE TROUBLE HELLO WORLD [spaces now included!]: ^^^{^^^^^^^^#>^^^^^#>^^^^^^^^
 
 ^^^^^{^^^^^}^^#>>^^;>
 
-
-
-
-
-
-
-
+test
