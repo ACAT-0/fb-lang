@@ -1,5 +1,16 @@
 - commandline system so you dont have to restat the lua program every time you want to run a program (FINISHED ! IT WAS VERY SIMPLE!)
-- reading files so we can write fb files
+- reading files so we can write fb files (ALSO DONE!)
+- pizza
+- currently used symbols:
+  - !
+  - #
+  - <>
+  - ^
+  - v
+  - ?
+  - $
+  - )
+
 - 
 
 
