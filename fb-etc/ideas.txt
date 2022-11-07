@@ -11,7 +11,9 @@
   - $
   - )
 
-- 
+- functions? could very well be a good idea. also could be hellish.
+  - basically, you could designate a cell as a function, and then go back to that cell to call it?
+  - idk seems really tough to do though
 
 
 
