@@ -82,7 +82,7 @@ function parseCommands(cmd,hdl)
                     read=cmd:sub(a,a)
                 until read==")"
             end
-        elseif read=="~"
+        elseif read=="~" then
             tape[header.X]=math.random(con.a,con.b)
         end
         a=a+1
