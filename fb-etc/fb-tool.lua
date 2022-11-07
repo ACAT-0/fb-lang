@@ -69,6 +69,18 @@ function parseCommands(cmd,hdl)
                 a=a+1
                 read=cmd:sub(a,a)
             until read==")" end
+        elseif read=="]" then
+            if con.a>con.b then con.y=1 else
+            repeat 
+                a=a+1
+                read=cmd:sub(a,a)
+            until read==")" end
+        elseif read=="[" then
+            if con.a<con.b then con.y=1 else
+            repeat 
+                a=a+1
+                read=cmd:sub(a,a)
+            until read==")" end
         elseif read==")" then con.y=0
         elseif read=="$" then 
             print("input requested...")
