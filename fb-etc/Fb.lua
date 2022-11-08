@@ -89,7 +89,7 @@ function parseCommands(cmd,hdl)
                 a=a+1
                 read=cmd:sub(a,a)
             until read==")" end
-        elseif read==")" then con.y=0
+        elseif read==")" then con.y=0 con.a=nil con.b=nil
         elseif read=="$" then 
             print("input requested...")
             local answer=io.read()
@@ -99,6 +99,9 @@ function parseCommands(cmd,hdl)
         elseif read=="~" then
             tape[header.X]=math.random(con.a,con.b)
         end
+    elseif read=="%" then
+        tape[header.X]=con.a
+    end
         a=a+1
     end
     if Debug==1 then print("Program concluded") end
