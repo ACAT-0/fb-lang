@@ -8,3 +8,20 @@ basic loop:
 TRIPLE TROUBLE HELLO WORLD [spaces now included!]: ^^^{^^^^^^^^#>^^^^^#>^^^^^^^^^^^^##^^^#>^^^^^^^^^^^^^^^^^^^^^^^^^^^#vvvv#<#^^^#vvvvvv#>>^^^^#<^^^^^#>>^^^^^^^^^^^^^^^^^^^^^^^^^^^#>};
 
 test
+
+
+print first 10 letters with a loop:
+
+^?>^^^^^^^^^^{>%#)^?>}
+    store a variable in the 'a' storage of value 1
+    move to next cell
+    create a loop that repeats 10 times
+        move to next cell
+        dump the variable into the cell and print the letter
+        clear the variable 
+        increment the cell  
+        store it in the 'a' storage again
+        move to the next cell
+        close the loop
+        
+        
